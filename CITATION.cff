@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software or research artifact, please cite it using the metadata from this file."
+title: "Agency Trajectory Benchmark: Effective Override Loss in AI-Mediated Workflows"
+authors:
+  - family-names: Ahmad
+    given-names: Aamish
+version: 0.1.0
+date-released: 2026-06-22
+repository-code: "https://github.com/aamish-ahmad/effective-override"
+license: MIT

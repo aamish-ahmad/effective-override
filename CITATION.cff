@@ -4,7 +4,7 @@ title: "Agency Trajectory Benchmark: Effective Override Loss in AI-Mediated Work
 authors:
   - family-names: Ahmad
     given-names: Aamish
-version: 0.1.0
+version: 1.0.0
 date-released: 2026-06-22
 repository-code: "https://github.com/aamish-ahmad/effective-override"
 license: MIT

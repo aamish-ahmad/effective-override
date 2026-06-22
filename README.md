@@ -1,40 +1,41 @@
-# Agency Trajectory Benchmark (ATB)
+# Agency Trajectory Benchmark
 
-Agency Trajectory Benchmark (ATB) is a synthetic matched-control benchmark for detecting effective override loss in human-in-the-loop systems.
+Agency Trajectory Benchmark is a synthetic benchmark for testing whether evaluators can detect when a human's apparent override stops changing the outcome of an AI-mediated workflow.
 
-**Core sentence:** Human-in-the-loop is not human-in-control.
+The project studies a narrow failure mode: effective override loss. A system may still offer choices, appeals, confirmations, or other human-in-the-loop actions, while the actual trajectory has already become insensitive to those actions. In that case, the human remains present in the workflow but no longer has effective control over the next consequential state.
 
-Current release: `v0.1.0`
+This release contains two matched-control experiments, model response ledgers, integrated metrics, robustness checks, a baseline ladder, audit notes, and no-API reproduction scripts.
 
-This repository packages the current public research artifact for ATB. It focuses on a narrow operational construct, **effective override loss**, and compares full-trajectory evaluation against lower-context baselines. The repository does not make any real-world validation claim.
+The main result is simple: final-state evaluation misses many positive cases that are visible from the ordered trajectory. Across both experiments, the final-step snapshot baseline detected 9/25 positive cases and missed or withheld judgment on 16/25 positive effective-override-loss cases.
 
-## At a Glance
+This is a synthetic benchmark and research artifact. It is not a real-world validation study and does not make claims about deployed platforms.
+
+Version: `v1.0.0`
+
+## Overview
 
 | Item | Value |
 |---|---|
-| Project | Agency Trajectory Benchmark (ATB) |
+| Project | Agency Trajectory Benchmark |
 | Repository | `effective-override` |
-| Release | `v0.1.0` |
-| Construct | Effective override loss |
-| Scope | Synthetic matched-control benchmark |
-| Primary comparison | Full trajectory vs final-step snapshot |
-| Public claim boundary | No real-world validation claim |
+| Release | `v1.0.0` |
+| Construct | effective override loss |
+| Scope | synthetic matched-control benchmark |
+| Comparison | full trajectory vs final-step snapshot |
 
 ## Main Results
 
-| Evaluation setting | Agreement | Cohen's kappa | Notes |
-|---|---:|---:|---|
-| Experiment 1 trajectory | 1.000 | 1.000 | 30 trajectories |
-| Experiment 1 snapshot | 0.760 covered-case | 0.464 | 5 positive yes, 5 no, 5 uncertain |
-| Experiment 2 trajectory | 0.950 | 0.900 | 20 trajectories |
-| Experiment 2 snapshot | 0.722 covered-case | 0.444 | 4 positive yes, 5 no, 1 uncertain |
-| Experiment 2 robustness | 0.950 | 0.900 | second-model check |
-| Experiment 2 ladder: final_step | 0.722 covered-case | 0.444 | final visible state only |
-| Experiment 2 ladder: last_2_steps | 0.632 covered-case | 0.231 | partial recent history |
-| Experiment 2 ladder: last_3_steps | 0.850 | 0.700 | broader recent history |
-| Experiment 2 ladder: full_trajectory | 0.950 | 0.900 | full ordered context |
-
-Across Experiment 1 and Experiment 2, the final-step snapshot baseline detected `9/25` positive cases and missed or withheld judgment on `16/25` positive cases.
+| Evaluation setting | Agreement | Cohen's kappa |
+|---|---:|---:|
+| Experiment 1 trajectory | 1.000 | 1.000 |
+| Experiment 1 snapshot | 0.760 covered-case | 0.464 |
+| Experiment 2 trajectory | 0.950 | 0.900 |
+| Experiment 2 snapshot | 0.722 covered-case | 0.444 |
+| Experiment 2 robustness | 0.950 | 0.900 |
+| Experiment 2 ladder: final_step | 0.722 covered-case | 0.444 |
+| Experiment 2 ladder: last_2_steps | 0.632 covered-case | 0.231 |
+| Experiment 2 ladder: last_3_steps | 0.850 | 0.700 |
+| Experiment 2 ladder: full_trajectory | 0.950 | 0.900 |
 
 ## Quick Start
 
@@ -44,7 +45,7 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Run local no-API integration and analysis steps:
+Run the local no-API integration and analysis steps:
 
 ```powershell
 python integrate_flash_lite_trajectory_rater.py
@@ -60,64 +61,55 @@ python integrate_experiment2_robustness.py
 python integrate_experiment2_baseline_ladder.py
 ```
 
-Local wrappers are also included under [repro](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/repro).
+Additional wrappers are available under `repro/`.
 
 ## Reproduction
 
-Reproduction for the committed public artifact is local and file-backed:
-
-- source datasets are committed under [data](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/data)
-- model response ledgers are committed under `data/`, `robustness/`, and `baseline_ladder/`
-- local post-processing scripts regenerate integrated CSV and JSON outputs without API calls
-- final analysis does not depend on hidden network requests
-
-See [docs/reproducibility.md](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/docs/reproducibility.md) for the release-facing reproducibility notes.
+The repository includes committed datasets, response ledgers, integrated outputs, audits, and release-facing summaries. Local post-processing can be rerun without API calls. See [docs/reproducibility.md](docs/reproducibility.md).
 
 ## Repository Map
 
-| Path | Purpose |
-|---|---|
-| [data](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/data) | datasets, response ledgers, integrated results, metrics |
-| [docs](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/docs) | methodology, schema, terminology, reproducibility, availability |
-| [reports](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/reports) | release-facing results and limitation summaries |
-| [audits](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/audits) | integrity, prompt-blindness, qualitative, and statistical audits |
-| [robustness](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/robustness) | Experiment 2 second-model robustness check |
-| [baseline_ladder](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/baseline_ladder) | Experiment 2 history-sensitivity ladder |
-| [paper](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/paper) | manuscript scaffold and claim-control notes |
-| [repro](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/repro) | local reproduction wrappers |
+- [data/](data/): datasets, response ledgers, integrated outputs, and metrics
+- [docs/](docs/): terminology, methodology, schema, reproducibility, and data availability notes
+- [reports/](reports/): release-facing summaries of results, statistical framing, and limitations
+- [audits/](audits/): integrity, prompt-blindness, qualitative, and statistical audits
+- [robustness/](robustness/): Experiment 2 second-model robustness outputs
+- [baseline_ladder/](baseline_ladder/): Experiment 2 context-window ladder outputs
+- [paper/](paper/): manuscript scaffold and claim-control notes
+- [release/public_release_manifest.md](release/public_release_manifest.md): committed release inventory
 
 ## Key Outputs
 
-- Experiment 1 final metrics: [data/experiment1_final_metrics_gemini_3_1_flash_lite.json](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/data/experiment1_final_metrics_gemini_3_1_flash_lite.json)
-- Experiment 2 final metrics: [data/experiment2_final_metrics_gemini_3_1_flash_lite.json](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/data/experiment2_final_metrics_gemini_3_1_flash_lite.json)
-- Experiment 2 robustness metrics: [robustness/experiment2_robustness_metrics.json](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/robustness/experiment2_robustness_metrics.json)
-- Experiment 2 baseline ladder metrics: [baseline_ladder/experiment2_baseline_ladder_metrics.json](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/baseline_ladder/experiment2_baseline_ladder_metrics.json)
-- Packaging gate report: [release/packaging_gate_report.md](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/release/packaging_gate_report.md)
+- [reports/results.md](reports/results.md)
+- [data/experiment1_final_metrics_gemini_3_1_flash_lite.json](data/experiment1_final_metrics_gemini_3_1_flash_lite.json)
+- [data/experiment2_final_metrics_gemini_3_1_flash_lite.json](data/experiment2_final_metrics_gemini_3_1_flash_lite.json)
+- [robustness/experiment2_robustness_metrics.json](robustness/experiment2_robustness_metrics.json)
+- [baseline_ladder/experiment2_baseline_ladder_metrics.json](baseline_ladder/experiment2_baseline_ladder_metrics.json)
 
 ## Data Availability
 
-All synthetic benchmark datasets, model response ledgers included in this release, integrated outputs, and public audit files are committed in the repository. See [docs/data_availability.md](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/docs/data_availability.md) for the exact release-facing scope and exclusions.
+The committed public release includes the synthetic benchmark datasets, committed response ledgers used in the release, integrated outputs, audit files, and release-facing reports. See [docs/data_availability.md](docs/data_availability.md).
 
 ## Paper
 
-Paper manuscript is in preparation. Paper scaffold and claim-control notes are included under [paper](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/paper).
+Paper manuscript is in preparation. Paper scaffold and claim-control notes are included under `paper/`.
 
-If a public paper PDF is later added, the expected path is `paper/effective_override_v0_1.pdf`.
+If a public paper PDF is later added, the expected path is `paper/effective_override_v1_0.pdf`.
 
 ## Citation
 
-If you use this software or research artifact, please cite the repository metadata in [CITATION.cff](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/CITATION.cff).
+If you use this repository, cite the software and research artifact metadata in [CITATION.cff](CITATION.cff).
 
 ## License
 
-This repository is released under the MIT License. See [LICENSE](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/LICENSE).
+Released under the MIT License. See [LICENSE](LICENSE).
 
 ## Limitations
 
-- Synthetic, author-generated benchmark only.
-- One fixed primary model and one recorded primary run.
-- No blinded human annotation study in the current release.
-- Small sample sizes.
-- One domain family rather than broad deployment coverage.
-- Final-step snapshot is a narrow low-context baseline, not a statement about all snapshot methods.
-- No real-world validation claim is supported by this repository.
+- synthetic, author-generated benchmark only
+- one fixed primary model and one recorded primary run
+- no blinded human annotation study in the current release
+- small sample sizes
+- one domain family rather than broad deployment coverage
+- final-step snapshot is a narrow low-context baseline, not a statement about all snapshot methods
+- no real-world validation claim is supported by this repository

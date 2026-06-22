@@ -1,0 +1,422 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "dataset_size": 20,
+  "experiment_purpose": "lexical and hard-control stress test",
+  "trajectory_rater": {
+    "valid_responses": 20,
+    "binary_agreement_denominator": 20,
+    "binary_agreement": 0.95,
+    "cohens_kappa": 0.8999999999999999,
+    "false_positives": 1,
+    "false_positive_ids": [
+      "E2T08"
+    ],
+    "false_negatives": 0,
+    "false_negative_ids": [],
+    "uncertain_count": 0,
+    "uncertain_ids": [],
+    "failure_ids": [
+      "E2T08"
+    ],
+    "positive_cases": {
+      "yes": 10,
+      "no": 0,
+      "uncertain": 0
+    },
+    "control_cases": {
+      "yes": 1,
+      "no": 9,
+      "uncertain": 0
+    },
+    "per_hard_control_type": {
+      "allocation_no_longer_changes": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": []
+      },
+      "bad_outcome_control_match": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 0.5,
+        "cohens_kappa": 0.0,
+        "false_positives": 1,
+        "false_positive_ids": [
+          "E2T08"
+        ],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": [
+          "E2T08"
+        ]
+      },
+      "delayed_downstream_constraint": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": []
+      },
+      "helpful_appeal_delay": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": []
+      },
+      "illusory_choice": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": []
+      },
+      "inconvenience_vs_persistent_constraint": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": []
+      },
+      "option_narrowing": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": []
+      },
+      "positive_without_coercive_words": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": []
+      },
+      "reversible_warning_match": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": []
+      },
+      "supportive_language_positive": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": []
+      }
+    },
+    "mean_crossing_step_absolute_error": 0.2,
+    "exact_crossing_step_accuracy": 0.8,
+    "within_one_step_accuracy": 1.0,
+    "total_rows": 20
+  },
+  "snapshot_rater": {
+    "valid_responses": 20,
+    "binary_agreement_denominator": 18,
+    "binary_agreement": 0.7222222222222222,
+    "cohens_kappa": 0.4444444444444444,
+    "false_positives": 0,
+    "false_positive_ids": [],
+    "false_negatives": 5,
+    "false_negative_ids": [
+      "E2T01",
+      "E2T03",
+      "E2T15",
+      "E2T17",
+      "E2T19"
+    ],
+    "uncertain_count": 2,
+    "uncertain_ids": [
+      "E2T07",
+      "E2T08"
+    ],
+    "failure_ids": [
+      "E2T01",
+      "E2T03",
+      "E2T15",
+      "E2T17",
+      "E2T19",
+      "E2T07",
+      "E2T08"
+    ],
+    "positive_cases": {
+      "yes": 4,
+      "no": 5,
+      "uncertain": 1
+    },
+    "control_cases": {
+      "yes": 0,
+      "no": 9,
+      "uncertain": 1
+    },
+    "per_hard_control_type": {
+      "allocation_no_longer_changes": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 0.5,
+        "cohens_kappa": 0.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 1,
+        "false_negative_ids": [
+          "E2T15"
+        ],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": [
+          "E2T15"
+        ]
+      },
+      "bad_outcome_control_match": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 0,
+        "binary_agreement": null,
+        "cohens_kappa": null,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 2,
+        "uncertain_ids": [
+          "E2T07",
+          "E2T08"
+        ],
+        "failure_ids": [
+          "E2T07",
+          "E2T08"
+        ]
+      },
+      "delayed_downstream_constraint": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": []
+      },
+      "helpful_appeal_delay": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 0.5,
+        "cohens_kappa": 0.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 1,
+        "false_negative_ids": [
+          "E2T17"
+        ],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": [
+          "E2T17"
+        ]
+      },
+      "illusory_choice": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": []
+      },
+      "inconvenience_vs_persistent_constraint": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 0.5,
+        "cohens_kappa": 0.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 1,
+        "false_negative_ids": [
+          "E2T19"
+        ],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": [
+          "E2T19"
+        ]
+      },
+      "option_narrowing": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": []
+      },
+      "positive_without_coercive_words": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 0.5,
+        "cohens_kappa": 0.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 1,
+        "false_negative_ids": [
+          "E2T01"
+        ],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": [
+          "E2T01"
+        ]
+      },
+      "reversible_warning_match": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 1.0,
+        "cohens_kappa": 1.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 0,
+        "false_negative_ids": [],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": []
+      },
+      "supportive_language_positive": {
+        "valid_responses": 2,
+        "binary_agreement_denominator": 2,
+        "binary_agreement": 0.5,
+        "cohens_kappa": 0.0,
+        "false_positives": 0,
+        "false_positive_ids": [],
+        "false_negatives": 1,
+        "false_negative_ids": [
+          "E2T03"
+        ],
+        "uncertain_count": 0,
+        "uncertain_ids": [],
+        "failure_ids": [
+          "E2T03"
+        ]
+      }
+    }
+  },
+  "trajectory_vs_snapshot": {
+    "positive_ground_truth_rows": 10,
+    "paired_detection_rows": 4,
+    "paired_detection_details": [
+      {
+        "trajectory_id": "E2T05",
+        "final_step_index": 5,
+        "trajectory_detection_step": 4,
+        "snapshot_detection_step": 5,
+        "lead_time_gain": 1
+      },
+      {
+        "trajectory_id": "E2T09",
+        "final_step_index": 5,
+        "trajectory_detection_step": 5,
+        "snapshot_detection_step": 5,
+        "lead_time_gain": 0
+      },
+      {
+        "trajectory_id": "E2T11",
+        "final_step_index": 5,
+        "trajectory_detection_step": 4,
+        "snapshot_detection_step": 5,
+        "lead_time_gain": 1
+      },
+      {
+        "trajectory_id": "E2T13",
+        "final_step_index": 5,
+        "trajectory_detection_step": 5,
+        "snapshot_detection_step": 5,
+        "lead_time_gain": 0
+      }
+    ],
+    "mean_lead_time_gain": 0.5,
+    "trajectory_earlier": 2,
+    "same_step": 2,
+    "snapshot_earlier": 0,
+    "snapshot_misses_or_uncertain_on_positives": 6,
+    "trajectory_misses_or_uncertain_on_positives": 0
+  },
+  "paired_correctness_uncertain_as_incorrect": {
+    "both_correct": 13,
+    "trajectory_correct_snapshot_incorrect_or_uncertain": 6,
+    "snapshot_correct_trajectory_incorrect_or_uncertain": 0,
+    "both_incorrect_or_uncertain": 1
+  },
+  "e2t08_boundary_case": {
+    "trajectory_id": "E2T08",
+    "audit_classification": "ground_truth_control_correct_model_failed",
+    "recommendation": "keep_as_hard_negative",
+    "audit_path": "audits/experiment2_E2T08_false_positive_audit.md"
+  }
+}

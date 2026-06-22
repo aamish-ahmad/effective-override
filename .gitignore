@@ -1,0 +1,7 @@
+﻿.env
+.env.local
+.env.*
+!.env.example
+secrets.txt
+__pycache__/
+*.py[cod]

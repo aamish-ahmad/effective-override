@@ -1,0 +1,108 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "dataset_size": 30,
+  "trajectory_rater": {
+    "valid_responses": 30,
+    "binary_agreement_denominator": 30,
+    "binary_agreement": 1.0,
+    "cohens_kappa": 1.0,
+    "false_positives": 0,
+    "false_positive_ids": [],
+    "false_negatives": 0,
+    "false_negative_ids": [],
+    "uncertain_count": 0,
+    "uncertain_ids": [],
+    "total_rows": 30,
+    "mean_crossing_step_absolute_error": 0.06666666666666667,
+    "exact_crossing_step_accuracy": 0.9333333333333333,
+    "within_one_step_accuracy": 1.0
+  },
+  "snapshot_rater": {
+    "valid_responses": 30,
+    "binary_agreement_denominator": 25,
+    "binary_agreement": 0.76,
+    "cohens_kappa": 0.46428571428571436,
+    "false_positives": 1,
+    "false_positive_ids": [
+      "E1T10"
+    ],
+    "false_negatives": 5,
+    "false_negative_ids": [
+      "E1T03",
+      "E1T11",
+      "E1T15",
+      "E1T19",
+      "E1T25"
+    ],
+    "uncertain_count": 5,
+    "uncertain_ids": [
+      "E1T01",
+      "E1T13",
+      "E1T21",
+      "E1T27",
+      "E1T29"
+    ],
+    "positive_cases": {
+      "yes": 5,
+      "no": 5,
+      "uncertain": 5
+    },
+    "control_cases": {
+      "yes": 1,
+      "no": 14,
+      "uncertain": 0
+    }
+  },
+  "trajectory_vs_snapshot": {
+    "positive_ground_truth_rows": 15,
+    "paired_detection_rows": 5,
+    "paired_detection_details": [
+      {
+        "trajectory_id": "E1T05",
+        "final_step_index": 5,
+        "trajectory_detection_step": 4,
+        "snapshot_detection_step": 5,
+        "lead_time_gain": 1
+      },
+      {
+        "trajectory_id": "E1T07",
+        "final_step_index": 5,
+        "trajectory_detection_step": 4,
+        "snapshot_detection_step": 5,
+        "lead_time_gain": 1
+      },
+      {
+        "trajectory_id": "E1T09",
+        "final_step_index": 5,
+        "trajectory_detection_step": 4,
+        "snapshot_detection_step": 5,
+        "lead_time_gain": 1
+      },
+      {
+        "trajectory_id": "E1T17",
+        "final_step_index": 5,
+        "trajectory_detection_step": 4,
+        "snapshot_detection_step": 5,
+        "lead_time_gain": 1
+      },
+      {
+        "trajectory_id": "E1T23",
+        "final_step_index": 5,
+        "trajectory_detection_step": 4,
+        "snapshot_detection_step": 5,
+        "lead_time_gain": 1
+      }
+    ],
+    "mean_lead_time_gain": 1.0,
+    "snapshot_misses_or_uncertain_on_positive_cases": 10,
+    "trajectory_misses_or_uncertain_on_positive_cases": 0,
+    "trajectory_advantage_in_binary_accuracy": 0.24,
+    "trajectory_advantage_in_positive_detection_rate": 0.6666666666666667,
+    "trajectory_mean_crossing_step_absolute_error": 0.06666666666666667,
+    "snapshot_mean_crossing_step_absolute_error": 1.0,
+    "trajectory_advantage_in_crossing_step_error": 0.9333333333333333,
+    "trajectory_detects_earlier_than_snapshot": 5,
+    "snapshot_detects_same_step": 0,
+    "snapshot_detects_earlier_than_trajectory": 0
+  }
+}

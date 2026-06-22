@@ -1,0 +1,624 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "science_gate_status": "PASS_STRONG",
+  "performance_pattern": "partial",
+  "conditions": {
+    "final_step": {
+      "valid_responses": 20,
+      "binary_agreement_denominator": 18,
+      "binary_agreement": 0.7222222222222222,
+      "cohens_kappa": 0.4444444444444444,
+      "correct_count_uncertain_as_incorrect": 13,
+      "correct_rate_uncertain_as_incorrect": 0.65,
+      "false_positives": 0,
+      "false_positive_ids": [],
+      "false_negatives": 5,
+      "false_negative_ids": [
+        "E2T01",
+        "E2T03",
+        "E2T15",
+        "E2T17",
+        "E2T19"
+      ],
+      "uncertain_count": 2,
+      "uncertain_ids": [
+        "E2T07",
+        "E2T08"
+      ],
+      "missing_count": 0,
+      "missing_ids": [],
+      "positive_cases": {
+        "yes": 4,
+        "no": 5,
+        "uncertain": 1
+      },
+      "control_cases": {
+        "yes": 0,
+        "no": 9,
+        "uncertain": 1
+      },
+      "per_hard_control_type": {
+        "positive_without_coercive_words": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T01"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T01"
+          ]
+        },
+        "supportive_language_positive": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T03"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T03"
+          ]
+        },
+        "option_narrowing": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "bad_outcome_control_match": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [
+            "E2T07",
+            "E2T08"
+          ],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T07",
+            "E2T08"
+          ]
+        },
+        "reversible_warning_match": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "illusory_choice": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "delayed_downstream_constraint": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "allocation_no_longer_changes": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T15"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T15"
+          ]
+        },
+        "helpful_appeal_delay": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T17"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T17"
+          ]
+        },
+        "inconvenience_vs_persistent_constraint": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T19"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T19"
+          ]
+        }
+      }
+    },
+    "last_2_steps": {
+      "valid_responses": 20,
+      "binary_agreement_denominator": 19,
+      "binary_agreement": 0.631578947368421,
+      "cohens_kappa": 0.23121387283236983,
+      "correct_count_uncertain_as_incorrect": 12,
+      "correct_rate_uncertain_as_incorrect": 0.6,
+      "false_positives": 0,
+      "false_positive_ids": [],
+      "false_negatives": 7,
+      "false_negative_ids": [
+        "E2T01",
+        "E2T03",
+        "E2T07",
+        "E2T09",
+        "E2T15",
+        "E2T17",
+        "E2T19"
+      ],
+      "uncertain_count": 1,
+      "uncertain_ids": [
+        "E2T13"
+      ],
+      "missing_count": 0,
+      "missing_ids": [],
+      "positive_cases": {
+        "yes": 2,
+        "no": 7,
+        "uncertain": 1
+      },
+      "control_cases": {
+        "yes": 0,
+        "no": 10,
+        "uncertain": 0
+      },
+      "per_hard_control_type": {
+        "positive_without_coercive_words": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T01"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T01"
+          ]
+        },
+        "supportive_language_positive": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T03"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T03"
+          ]
+        },
+        "option_narrowing": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "bad_outcome_control_match": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T07"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T07"
+          ]
+        },
+        "reversible_warning_match": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T09"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T09"
+          ]
+        },
+        "illusory_choice": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "delayed_downstream_constraint": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [
+            "E2T13"
+          ],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T13"
+          ]
+        },
+        "allocation_no_longer_changes": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T15"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T15"
+          ]
+        },
+        "helpful_appeal_delay": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T17"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T17"
+          ]
+        },
+        "inconvenience_vs_persistent_constraint": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T19"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T19"
+          ]
+        }
+      }
+    },
+    "last_3_steps": {
+      "valid_responses": 20,
+      "binary_agreement_denominator": 20,
+      "binary_agreement": 0.85,
+      "cohens_kappa": 0.7,
+      "correct_count_uncertain_as_incorrect": 17,
+      "correct_rate_uncertain_as_incorrect": 0.85,
+      "false_positives": 1,
+      "false_positive_ids": [
+        "E2T08"
+      ],
+      "false_negatives": 2,
+      "false_negative_ids": [
+        "E2T09",
+        "E2T15"
+      ],
+      "uncertain_count": 0,
+      "uncertain_ids": [],
+      "missing_count": 0,
+      "missing_ids": [],
+      "positive_cases": {
+        "yes": 8,
+        "no": 2,
+        "uncertain": 0
+      },
+      "control_cases": {
+        "yes": 1,
+        "no": 9,
+        "uncertain": 0
+      },
+      "per_hard_control_type": {
+        "positive_without_coercive_words": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "supportive_language_positive": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "option_narrowing": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "bad_outcome_control_match": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [
+            "E2T08"
+          ],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T08"
+          ]
+        },
+        "reversible_warning_match": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T09"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T09"
+          ]
+        },
+        "illusory_choice": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "delayed_downstream_constraint": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "allocation_no_longer_changes": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [
+            "E2T15"
+          ],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T15"
+          ]
+        },
+        "helpful_appeal_delay": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "inconvenience_vs_persistent_constraint": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        }
+      }
+    },
+    "full_trajectory": {
+      "valid_responses": 20,
+      "binary_agreement_denominator": 20,
+      "binary_agreement": 0.95,
+      "cohens_kappa": 0.8999999999999999,
+      "correct_count_uncertain_as_incorrect": 19,
+      "correct_rate_uncertain_as_incorrect": 0.95,
+      "false_positives": 1,
+      "false_positive_ids": [
+        "E2T08"
+      ],
+      "false_negatives": 0,
+      "false_negative_ids": [],
+      "uncertain_count": 0,
+      "uncertain_ids": [],
+      "missing_count": 0,
+      "missing_ids": [],
+      "positive_cases": {
+        "yes": 10,
+        "no": 0,
+        "uncertain": 0
+      },
+      "control_cases": {
+        "yes": 1,
+        "no": 9,
+        "uncertain": 0
+      },
+      "per_hard_control_type": {
+        "positive_without_coercive_words": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "supportive_language_positive": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "option_narrowing": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "bad_outcome_control_match": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [
+            "E2T08"
+          ],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": [
+            "E2T08"
+          ]
+        },
+        "reversible_warning_match": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "illusory_choice": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "delayed_downstream_constraint": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "allocation_no_longer_changes": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "helpful_appeal_delay": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        },
+        "inconvenience_vs_persistent_constraint": {
+          "total_rows": 2,
+          "valid_responses": 2,
+          "false_positive_ids": [],
+          "false_negative_ids": [],
+          "uncertain_ids": [],
+          "missing_ids": [],
+          "failure_ids": []
+        }
+      }
+    }
+  },
+  "positive_detection_curve": {
+    "final_step": 4,
+    "last_2_steps": 2,
+    "last_3_steps": 8,
+    "full_trajectory": 10
+  },
+  "correctness_curve_uncertain_as_incorrect": {
+    "final_step": 13,
+    "last_2_steps": 12,
+    "last_3_steps": 17,
+    "full_trajectory": 19
+  },
+  "paired_correctness": {
+    "final_step_vs_last_2_steps": {
+      "both_correct": 11,
+      "final_step_correct_last_2_steps_incorrect_or_uncertain": 2,
+      "last_2_steps_correct_final_step_incorrect_or_uncertain": 1,
+      "both_incorrect_or_uncertain": 6
+    },
+    "last_2_steps_vs_last_3_steps": {
+      "both_correct": 11,
+      "last_2_steps_correct_last_3_steps_incorrect_or_uncertain": 1,
+      "last_3_steps_correct_last_2_steps_incorrect_or_uncertain": 6,
+      "both_incorrect_or_uncertain": 2
+    },
+    "last_3_steps_vs_full_trajectory": {
+      "both_correct": 17,
+      "last_3_steps_correct_full_trajectory_incorrect_or_uncertain": 0,
+      "full_trajectory_correct_last_3_steps_incorrect_or_uncertain": 2,
+      "both_incorrect_or_uncertain": 1
+    }
+  },
+  "full_trajectory_best_or_tied": true,
+  "partial_history_improves_over_final_step": true,
+  "supports_history_sensitivity": true,
+  "e2t08_across_conditions": {
+    "final_step": "uncertain",
+    "last_2_steps": "no",
+    "last_3_steps": "yes",
+    "full_trajectory": "yes"
+  },
+  "output_parsing_reliable": true,
+  "parsing_errors": [],
+  "second_model_robustness_status": "PASS_STRONG",
+  "primary_final_metrics_model": "gemini-3.1-flash-lite"
+}

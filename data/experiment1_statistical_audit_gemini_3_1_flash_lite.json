@@ -1,0 +1,20 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "paired_correctness_table": {
+    "both_correct": 19,
+    "trajectory_correct_snapshot_incorrect_or_uncertain": 11,
+    "snapshot_correct_trajectory_incorrect_or_uncertain": 0,
+    "both_incorrect_or_uncertain": 0
+  },
+  "b": 11,
+  "c": 0,
+  "n_discordant": 11,
+  "mcnemar_exact_p": 0.0009765625,
+  "interpretation": "Under an exact paired sign-test/McNemar formulation over discordant pairs, the probability of observing 11 trajectory-favoring discordances and 0 snapshot-favoring discordances under the null of equal paired correctness is p = 0.0009765625.",
+  "trajectory_correct_rate_uncertain_as_incorrect": 1.0,
+  "snapshot_correct_rate_uncertain_as_incorrect": 0.6333333333333333,
+  "snapshot_coverage_rate": 0.8333333333333334,
+  "snapshot_accuracy_excluding_uncertain": 0.76,
+  "snapshot_positive_detection_rate_yes_only": 0.3333333333333333,
+  "trajectory_positive_detection_rate_yes_only": 1.0
+}

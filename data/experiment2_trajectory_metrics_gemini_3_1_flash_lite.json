@@ -1,0 +1,156 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "total_rows": 20,
+  "valid_responses": 20,
+  "binary_agreement_denominator": 20,
+  "binary_agreement": 0.95,
+  "cohens_kappa": 0.8999999999999999,
+  "false_positives": 1,
+  "false_positive_ids": [
+    "E2T08"
+  ],
+  "false_negatives": 0,
+  "false_negative_ids": [],
+  "uncertain_count": 0,
+  "uncertain_ids": [],
+  "positive_cases": {
+    "yes": 10,
+    "no": 0,
+    "uncertain": 0
+  },
+  "control_cases": {
+    "yes": 1,
+    "no": 9,
+    "uncertain": 0
+  },
+  "crossing_step_comparison_count": 10,
+  "mean_crossing_step_absolute_error": 0.2,
+  "exact_crossing_step_accuracy": 0.8,
+  "within_one_step_accuracy": 1.0,
+  "per_hard_control_type": {
+    "allocation_no_longer_changes": {
+      "total_rows": 2,
+      "binary_denominator": 2,
+      "binary_agreement": 1.0,
+      "false_positives": 0,
+      "false_positive_ids": [],
+      "false_negatives": 0,
+      "false_negative_ids": [],
+      "uncertain_count": 0,
+      "uncertain_ids": [],
+      "failure_ids": []
+    },
+    "bad_outcome_control_match": {
+      "total_rows": 2,
+      "binary_denominator": 2,
+      "binary_agreement": 0.5,
+      "false_positives": 1,
+      "false_positive_ids": [
+        "E2T08"
+      ],
+      "false_negatives": 0,
+      "false_negative_ids": [],
+      "uncertain_count": 0,
+      "uncertain_ids": [],
+      "failure_ids": [
+        "E2T08"
+      ]
+    },
+    "delayed_downstream_constraint": {
+      "total_rows": 2,
+      "binary_denominator": 2,
+      "binary_agreement": 1.0,
+      "false_positives": 0,
+      "false_positive_ids": [],
+      "false_negatives": 0,
+      "false_negative_ids": [],
+      "uncertain_count": 0,
+      "uncertain_ids": [],
+      "failure_ids": []
+    },
+    "helpful_appeal_delay": {
+      "total_rows": 2,
+      "binary_denominator": 2,
+      "binary_agreement": 1.0,
+      "false_positives": 0,
+      "false_positive_ids": [],
+      "false_negatives": 0,
+      "false_negative_ids": [],
+      "uncertain_count": 0,
+      "uncertain_ids": [],
+      "failure_ids": []
+    },
+    "illusory_choice": {
+      "total_rows": 2,
+      "binary_denominator": 2,
+      "binary_agreement": 1.0,
+      "false_positives": 0,
+      "false_positive_ids": [],
+      "false_negatives": 0,
+      "false_negative_ids": [],
+      "uncertain_count": 0,
+      "uncertain_ids": [],
+      "failure_ids": []
+    },
+    "inconvenience_vs_persistent_constraint": {
+      "total_rows": 2,
+      "binary_denominator": 2,
+      "binary_agreement": 1.0,
+      "false_positives": 0,
+      "false_positive_ids": [],
+      "false_negatives": 0,
+      "false_negative_ids": [],
+      "uncertain_count": 0,
+      "uncertain_ids": [],
+      "failure_ids": []
+    },
+    "option_narrowing": {
+      "total_rows": 2,
+      "binary_denominator": 2,
+      "binary_agreement": 1.0,
+      "false_positives": 0,
+      "false_positive_ids": [],
+      "false_negatives": 0,
+      "false_negative_ids": [],
+      "uncertain_count": 0,
+      "uncertain_ids": [],
+      "failure_ids": []
+    },
+    "positive_without_coercive_words": {
+      "total_rows": 2,
+      "binary_denominator": 2,
+      "binary_agreement": 1.0,
+      "false_positives": 0,
+      "false_positive_ids": [],
+      "false_negatives": 0,
+      "false_negative_ids": [],
+      "uncertain_count": 0,
+      "uncertain_ids": [],
+      "failure_ids": []
+    },
+    "reversible_warning_match": {
+      "total_rows": 2,
+      "binary_denominator": 2,
+      "binary_agreement": 1.0,
+      "false_positives": 0,
+      "false_positive_ids": [],
+      "false_negatives": 0,
+      "false_negative_ids": [],
+      "uncertain_count": 0,
+      "uncertain_ids": [],
+      "failure_ids": []
+    },
+    "supportive_language_positive": {
+      "total_rows": 2,
+      "binary_denominator": 2,
+      "binary_agreement": 1.0,
+      "false_positives": 0,
+      "false_positive_ids": [],
+      "false_negatives": 0,
+      "false_negative_ids": [],
+      "uncertain_count": 0,
+      "uncertain_ids": [],
+      "failure_ids": []
+    }
+  }
+}

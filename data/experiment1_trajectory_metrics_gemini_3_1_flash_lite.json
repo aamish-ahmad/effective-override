@@ -1,0 +1,32 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "total_rows": 30,
+  "valid_trajectory_rater_responses": 30,
+  "binary_agreement_denominator": 30,
+  "binary_agreement": 1.0,
+  "cohens_kappa": 1.0,
+  "false_positives": 0,
+  "false_positive_ids": [],
+  "false_negatives": 0,
+  "false_negative_ids": [],
+  "uncertain_count": 0,
+  "uncertain_ids": [],
+  "crossing_step_comparison_count": 15,
+  "mean_crossing_step_absolute_error": 0.06666666666666667,
+  "within_one_step_accuracy": 1.0,
+  "exact_crossing_step_accuracy": 0.9333333333333333,
+  "per_condition_counts": {
+    "erosion_positive": {
+      "total": 15,
+      "yes": 15,
+      "no": 0,
+      "uncertain": 0
+    },
+    "matched_control": {
+      "total": 15,
+      "yes": 0,
+      "no": 15,
+      "uncertain": 0
+    }
+  }
+}

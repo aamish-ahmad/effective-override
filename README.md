@@ -1,62 +1,101 @@
 # Agency Trajectory Benchmark v0
 
-## Detecting Loss of Effective Override in AI-Mediated Workflows
+Agency Trajectory Benchmark (`ATB-v0`) is a synthetic matched-control benchmark for detecting **effective override loss** in human-in-the-loop systems.
 
-### Experiment 0 objective
+Human-in-the-loop is not human-in-control. A workflow can still present nominal choices while a person's override no longer meaningfully changes the next consequential state. `ATB-v0` operationalizes that failure as a trajectory-level construct and compares full-trajectory evaluation against lower-context baselines.
 
-Experiment 0 tests whether a rater can identify **loss of effective override** from short workflow trajectories. The seed set contains six 4-5 step trajectories from gig work and algorithmic management: three agency-erosion cases and three matched negative controls.
+This repository is a public research artifact release. It does **not** claim real-world validation, does **not** establish wrongdoing by any deployed platform, and does **not** present authored labels or LLM ratings as ground truth beyond this synthetic benchmark.
 
-This version uses manual ground-truth labels and leaves blind-rater fields empty for a later independent annotation pass. It makes no API calls and has no LLM integration.
+## What This Repository Contains
 
-### Crossing rule
+- Two synthetic matched-control experiments for effective human override and effective override loss.
+- Model-specific response ledgers, integrated result tables, metrics JSON files, audits, and paper scaffolding.
+- Reproduction scripts for local post-processing, analysis, robustness checks, and the Experiment 2 baseline ladder.
 
-A trajectory crosses into agency erosion at the first step where a human's attempted or plausible override no longer meaningfully changes the next outcome, and that failure is caused by system structure such as penalty, hidden alternatives, delayed visibility, ranking suppression, or irreversible downstream constraints.
+## Core Construct
 
-Record the earliest step that satisfies both parts of the rule. Constraint or inconvenience alone is not a crossing if a meaningful override remains available.
+A trajectory crosses into **effective override loss** at the earliest step where:
 
-### Why matched controls matter
+1. A human override action is attempted or plausibly available.
+2. That override no longer meaningfully changes the next outcome trajectory.
+3. The failure is caused by system structure.
+4. The loss persists or creates downstream constraint.
 
-Each positive case is paired with a similar control that shares its domain, decision, and friction. The control preserves an effective override. These pairs test whether a rater distinguishes structural loss of control from ordinary automation, delay, or an unfavorable recommendation.
+Bad outcomes alone do not count. The benchmark is designed to distinguish structural loss of control from inconvenience, delay, or an unfavorable but still override-sensitive result.
 
-### Run
+## Main Results
 
-From this directory:
+### Experiment 1: Ordinary Synthetic Matched Controls
+
+- Dataset: 30 trajectories, 15 positives, 15 matched controls.
+- Full trajectory: agreement `1.000`, Cohen's kappa `1.000`.
+- Final-step snapshot: covered-case agreement `0.760`, Cohen's kappa `0.464`.
+- Snapshot positive judgments: `5 yes / 5 no / 5 uncertain`.
+
+### Experiment 2: Lexical Hard Controls
+
+- Dataset: 20 trajectories, 10 positives, 10 matched controls.
+- Full trajectory: agreement `0.950`, Cohen's kappa `0.900`.
+- Final-step snapshot: covered-case agreement `0.722`, Cohen's kappa `0.444`.
+- Snapshot positive judgments: `4 yes / 5 no / 1 uncertain`.
+
+### History-Sensitivity Checks
+
+- Experiment 2 second-model robustness check (`gemini-3.5-flash`): Cohen's kappa `0.900`.
+- Experiment 2 baseline ladder kappas:
+- `final_step`: `0.444`
+- `last_2_steps`: `0.231`
+- `last_3_steps`: `0.700`
+- `full_trajectory`: `0.900`
+
+Across Experiment 1 and Experiment 2, the final-step snapshot baseline detected `9/25` positive cases and missed or withheld judgment on `16/25` positive effective-override-loss cases.
+
+## Repository Layout
+
+- [data](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/data): source datasets, integrated result tables, metrics JSON files, and model response ledgers.
+- [audits](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/audits): integrity, prompt-blindness, qualitative, pairwise, and statistical audit outputs.
+- [robustness](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/robustness): Experiment 2 second-model robustness outputs.
+- [baseline_ladder](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/baseline_ladder): Experiment 2 history-sensitivity baseline ladder outputs.
+- [paper](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/paper): claim controls, paper scaffold, tables, and release-facing notes.
+- [repro](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/repro): no-API local reproduction entry points.
+
+## Reproduction
+
+Local post-processing and analysis can be rerun without API calls:
 
 ```powershell
-python analyze.py
-streamlit run app.py
+python integrate_flash_lite_trajectory_rater.py
+python scripts/analyze_experiment1_trajectory_flash_lite.py
+python integrate_flash_lite_snapshot_rater.py
+python scripts/analyze_experiment1_full_flash_lite.py
+python scripts/audit_experiment1_robustness.py
+python integrate_experiment2_trajectory_rater.py
+python scripts/analyze_experiment2_trajectory_flash_lite.py
+python integrate_experiment2_snapshot_rater.py
+python scripts/analyze_experiment2_full_flash_lite.py
+python integrate_experiment2_robustness.py
+python integrate_experiment2_baseline_ladder.py
 ```
 
-Enter blind-rater labels directly in `data/experiment0.csv`, preserving the column names. Use `TRUE` or `FALSE` for `blind_rater_crossing_present`, a 1-based step number for positive crossings, and leave `blind_rater_crossing_step` empty for controls.
+Convenience wrappers are also provided:
 
-### Automated Gemini Snapshot Rater
+- [repro/run_repro_no_api.sh](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/repro/run_repro_no_api.sh)
+- [repro/run_repro_no_api.bat](/C:/Users/chuwi/Desktop/Artifacts_all/agency-trajectory-benchmark/repro/run_repro_no_api.bat)
 
-The snapshot runner sends only each trajectory ID, final-step number, and final-step text to Gemini. Ground-truth labels, blind-rater outputs, and preceding trajectory steps are not included in the API prompt.
+API runners are included for completeness, but the public release is intended to be inspectable and reproducible from the committed local artifacts without hidden API calls in final analysis.
 
-Install dependencies:
+## Limitations
 
-```powershell
-pip install -r requirements.txt
-```
+- Synthetic, author-generated trajectories only.
+- One fixed primary model and one recorded run for the main reported comparison.
+- No blinded human annotation study.
+- Small sample sizes.
+- One domain family rather than broad real-world coverage.
+- Final-step snapshot is a deliberately weak low-context baseline, not a universal snapshot method.
+- No real-world validation claim is supported by this repository.
 
-On Windows PowerShell, configure credentials for the current shell and run the evaluator:
+## Public Release Notes
 
-```powershell
-$env:GEMINI_API_KEY="your_key_here"
-$env:GEMINI_MODEL="gemini-3.5-flash"
-
-python run_gemini_snapshot_rater.py
-python integrate_snapshot_rater.py
-python analyze.py
-```
-
-The runner automatically invokes the integration and analysis scripts after generation; the final two commands can also be run independently. Use `python run_gemini_snapshot_rater.py --dry-run` to validate inputs and final-step-only prompt construction without an API call.
-
-### Limitations
-
-- Six hand-authored trajectories are too few for general conclusions.
-- The examples cover only gig work and algorithmic management.
-- Ground truth reflects the benchmark authors' interpretation of agency erosion.
-- Text-only trajectories omit interface details, timing, and broader worker context.
-- Empty blind-rater fields mean metrics and the gate are provisional until all cases are labeled.
-- The pass gate is a hackathon screening criterion, not a validated psychometric threshold.
+- Local workflow notes and task files are intentionally excluded from version control.
+- Local environment files and secrets are intentionally excluded from version control.
+- Reviewer-feedback files containing prohibited motivating wording were intentionally excluded from the public release commit.

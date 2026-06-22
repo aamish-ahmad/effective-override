@@ -12,6 +12,12 @@ This is a synthetic benchmark and research artifact. It is not a real-world vali
 
 Version: `v1.0.0`
 
+## Current State
+
+- Current release: `v1.0.0`
+- Contains two authored synthetic matched-control experiments, committed metrics, audits, and no-API reproduction scripts
+- Intended as a seed benchmark for effective override loss, not as real-world validation
+
 ## Overview
 
 | Item | Value |
